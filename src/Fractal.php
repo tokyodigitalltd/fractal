@@ -192,8 +192,8 @@ class FractalTemplateLoader implements \Twig_LoaderInterface, \Twig_ExistsLoader
                 $mappings = json_decode(file_get_contents($mappingPath));
                 if ($mappings->$name) {
                     if (strpos($mappings->$name, '/') !== 0) {
-												//throw new Exception(realpath(CRAFT_BASE_PATH) . '/' . $mappings->$name->dest . '/' . $mappings->$name->file);
-												$template = realpath(CRAFT_BASE_PATH) . '/templates/' . $mappings->$name;
+			//throw new Exception(realpath(CRAFT_BASE_PATH) . '/' . $mappings->$name->dest . '/' . $mappings->$name->file);
+			$template = realpath(CRAFT_BASE_PATH . '../') . '/' . $mappings->$name;
                     } else {
                         $template = $mappings->$name;
                     }
